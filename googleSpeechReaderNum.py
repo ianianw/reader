@@ -8,13 +8,13 @@ from requests import ConnectTimeout
 
 with open('test', encoding='UTF8') as f:
     lines = f.readlines()
-    lines = [line.replace('\n', '') for line in lines]
+    lines = list(set([line.replace('\n', '') for line in lines]))
     backup_lines = list(lines)
     shuffle(lines)
 
     # langs = ['en-au', 'en-au']
-    langs = ['en-us', 'en-us']
-    # langs = ['en-us']
+    # langs = ['en-us', 'en-us', 'en-us']
+    langs = ["zh-CN"]
 
     index = 1
     for line in lines:
@@ -31,9 +31,9 @@ with open('test', encoding='UTF8') as f:
                     print(backup_lines)
                     exit()
             # time.sleep(2)
-            time.sleep(4)
+            # time.sleep(10)
 
         index = index + 1
         backup_lines.remove(line)
-        # time.sleep(15)
-        time.sleep(10)
+        time.sleep(3)
+        # time.sleep(20)
