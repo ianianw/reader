@@ -1,0 +1,10 @@
+Eng:
+  long interval: 6
+  long sleep: 6
+  short interval: 4
+  short sleep: 4
+Chn:
+  long interval: 6
+  long sleep: 6
+  short interval: 4
+  short sleep: 4

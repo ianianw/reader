@@ -1,6 +1,9 @@
+import os
 from random import shuffle
 
 import time
+
+import yaml
 from google_speech import Speech
 
 tw_lines = ['只得', '飘落']
@@ -25,6 +28,13 @@ with open('test', encoding='UTF8') as f:
 
     index = 1
     for line in lines:
+        timeout = yaml.safe_load(open(os.path.join(os.path.dirname(__file__), "timeout.yml")))
+        if len(line) > 2:
+            interval = timeout['Chn']['long interval']
+            sleep = timeout['Chn']['long sleep']
+        else:
+            interval = timeout['Chn']['short interval']
+            sleep = timeout['Chn']['short sleep']
         print("{0} - {1}".format(index, line))
         for x in range(0, 2):
             if line in tw_lines:
@@ -45,10 +55,10 @@ with open('test', encoding='UTF8') as f:
                 sox_effects = ("speed", "1.0")
                 speech = Speech(replace_lines.get(line, line), lang)
                 speech.play(sox_effects)
-            time.sleep(3)
+            time.sleep(sleep)
 
         index = index + 1
         backup_lines.remove(line)
-        time.sleep(15)
+        time.sleep(interval)
 
     print(backup_lines)
