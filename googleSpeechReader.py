@@ -29,14 +29,16 @@ with open('test', encoding='UTF8') as f:
     index = 1
     for line in lines:
         timeout = yaml.safe_load(open(os.path.join(os.path.dirname(__file__), "timeout.yml")))
-        if len(line) > 2:
+        if len(line) > 4:
             interval = timeout['Chn']['long interval']
             sleep = timeout['Chn']['long sleep']
+            repeat_times = 3
         else:
             interval = timeout['Chn']['short interval']
             sleep = timeout['Chn']['short sleep']
+            repeat_times = 2
         print("{0} - {1}".format(index, line))
-        for x in range(0, 2):
+        for x in range(0, repeat_times):
             if line in tw_lines:
                 lang = "zh-TW"
                 sox_effects = ("speed", "1.0")
