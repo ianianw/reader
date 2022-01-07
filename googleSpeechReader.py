@@ -20,7 +20,7 @@ replace_lines = {'种树': '众树',
                  '种瓜': '重瓜'}
 separate_lines = {'找着': {'找': 'zh-CN', 'zháo': 'vi'}}
 
-with open('test', encoding='UTF8') as f:
+with open('words.txt', encoding='UTF8') as f:
     lines = f.readlines()
     lines = [line.replace('\n', '') for line in lines]
     backup_lines = list(lines)
@@ -29,7 +29,7 @@ with open('test', encoding='UTF8') as f:
     index = 1
     for line in lines:
         timeout = yaml.safe_load(open(os.path.join(os.path.dirname(__file__), "timeout.yml")))
-        if len(line) > 4:
+        if len(line) > 3:
             interval = timeout['Chn']['long interval']
             sleep = timeout['Chn']['long sleep']
             repeat_times = 3

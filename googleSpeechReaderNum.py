@@ -6,7 +6,7 @@ import requests
 from google_speech import Speech
 from requests import ConnectTimeout
 
-with open('test', encoding='UTF8') as f:
+with open('words.txt', encoding='UTF8') as f:
     lines = f.readlines()
     lines = list(set([line.replace('\n', '') for line in lines]))
     backup_lines = list(lines)
