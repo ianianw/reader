@@ -23,7 +23,7 @@ with open('words.txt', encoding='UTF8') as f:
 
     # langs = ['en-au', 'en-au', 'en-au']
     langs = ['en-us', 'en-us']
-    # langs = ['en-us']
+    # langs = ['en-au']
 
     index = 1
     for dialog in dialogs:

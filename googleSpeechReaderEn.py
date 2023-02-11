@@ -12,7 +12,7 @@ with open('words.txt', encoding='UTF8') as f:
     lines = f.readlines()
     lines = [line.replace('\n', '') for line in lines]
     backup_lines = list(lines)
-    # shuffle(lines)
+    shuffle(lines)
 
     index = 1
     for line in lines:

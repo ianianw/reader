@@ -8,3 +8,9 @@ Chn:
   long sleep: 4
   short interval: 3
   short sleep: 3
+
+#Chn:
+#  long interval: 6
+#  long sleep: 6
+#  short interval: 5
+#  short sleep: 5
